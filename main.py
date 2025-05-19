@@ -90,7 +90,7 @@ def train_text_prediction_lstm(data_path):
 # 2a. Traditional Model for Sentiment Classification (your existing Naive Bayes)
 def train_sentiment_naive_bayes(data_path):
     df = pd.read_csv(data_path)
-    X = df['text'].str.lower().str.strip().str.replace('[^\w\s]', '', regex=True)
+    X = df['text'].str.lower().str.strip().str.replace(r'[^\w\s]', '', regex=True)
     y = df['label'].astype(int)
 
     print("Sample texts:", X.head())
